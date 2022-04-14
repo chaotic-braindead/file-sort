@@ -9,6 +9,7 @@ class Move:
     def __init__(self, directory, extract=None):
         self.directory = directory
         self.extract = extract
+
     def sort_by_extension(self):
         path = os.listdir(self.directory)
         
@@ -19,6 +20,9 @@ class Move:
             if file_extension == '':
                 continue
 
+            if file_extension == '.ini':
+                continue
+
             if os.path.exists(f'{self.directory}\{file_extension[1:]}'):
                 shutil.move(os.path.join(self.directory, f'{filename}{file_extension}'), 
                 (os.path.join(self.directory, file_extension[1:])))
@@ -27,6 +31,7 @@ class Move:
                 os.makedirs(f'{self.directory}\{file_extension[1:]}')
                 shutil.move(os.path.join(self.directory, f'{filename}{file_extension}'),
                 (os.path.join(self.directory, file_extension[1:])))
+
     def sort_by_file_type(directory):
     
         for f in os.listdir(directory):
@@ -70,8 +75,10 @@ class Move:
 
     def extension_folder_extract(self):
         extract = self.extract
-        for root, _, files in os.walk(self.directory):
+        for root, dirs, files in os.walk(self.directory):
             try:
+                files = [f for f in files if f != 'desktop.ini' and '.qml' not in f and '.qmlc' not in f]
+                dirs[:] = [d for d in dirs if d != 'desktop.ini'  and '.qml' not in d and '.qmlc' not in d]
                 check = files[0].split('.')[-1]
             except IndexError:
                 continue
@@ -89,9 +96,10 @@ class Move:
 
     def folder_extract(self):
         extract = self.extract
-        for root, _, files in os.walk(self.directory):
+        for root, dirs, files in os.walk(self.directory):
+            files = [f for f in files if f != 'desktop.ini' and '.qml' not in f and '.qmlc' not in f]
+            dirs[:] = [d for d in dirs if d != 'desktop.ini'  and '.qml' not in d and '.qmlc' not in d]
             for name in files:
-                dir = name.split('.')[1]
                 shutil.move(f'{root}\{name}', extract)
                 try:
                     if os.path.exists(f'{root}'):
