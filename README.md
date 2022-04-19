@@ -1,7 +1,6 @@
+<h1 align="center">file-sort</h1> 
 [![Python Version](https://img.shields.io/badge/Python-3.10.2-blue)](https://github.com/chaotic-braindead/file-sort)
 
-<h1 align="center">file-sort</h1> 
-<h5 align="center">Version 1.0</h3><br />
 
 **file-sort** sorts files by extension or by file type (e.g. pictures, documents) and can also redo the process.<br /><br />
 **Names of folders per extension**
