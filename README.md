@@ -14,4 +14,7 @@
 | 7zip, rar, zip                    | Compressed files |
 | Unmentioned extensions            | Other files  | 
 
+***
 
+<h2>Demo</h2>
+<img src="https://github.com/chaotic-braindead/file-sort/blob/main/demo/demo.gif?raw=true">
