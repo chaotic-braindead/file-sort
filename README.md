@@ -1,6 +1,7 @@
 <h1 align="center">file-sort</h1> 
 
 [![Python Version](https://img.shields.io/badge/Python-3.10.2-blue)](https://github.com/chaotic-braindead/file-sort)
+[![Download](https://img.shields.io/github/downloads/chaotic-braindead/file-sort/total?color=green)](https://github.com/chaotic-braindead/file-sort/releases/download/v1.0/File.Sorter.exe)
 
 
 **file-sort** sorts files by extension or by file type (e.g. pictures, documents) and can also redo the process.<br /><br />
